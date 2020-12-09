@@ -29,14 +29,10 @@ def en_word_normal(word):
   print(finalPhonetic)
 
 # -------------- 获取译文
-  finalMeaning = ''
+  finalMeaning = []
   for i in range(len(soup.select('div[id="phrsListTab"] > div[class="trans-container"] > ul > li'))):
     meaning = soup.select('div[id="phrsListTab"] > div[class="trans-container"] > ul > li')[i].get_text()
-
-    if i!=0:
-      finalMeaning = finalMeaning + '\n' + meaning
-    else:
-      finalMeaning = meaning
+    finalMeaning.append(meaning)
 
 
 # -------------- 获取单词表达形式：
